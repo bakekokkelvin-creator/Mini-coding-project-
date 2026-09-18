@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mini project</title>
+    
+    <!-- STYLE (CSS) -->
+    <style>
+        /* Reset Basic */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: #ff9f43;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: background 0.3s;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=1200') center/cover no-repeat;
+            height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #ff9f43;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #ee5253;
+            transform: translateY(-2px);
+        }
+
+        /* Sections General */
+        .section {
+            padding: 4rem 2rem;
+            text-align: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .bg-light {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+        }
+
+        /* Cards */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin-bottom: 0.5rem;
+            color: #ff9f43;
+        }
+
+        /* Interactive Box */
+        .fact-box {
+            background: #fff5eb;
+            border-left: 5px solid #ff9f43;
+            padding: 1.5rem;
+            margin: 1.5rem auto;
+            max-width: 600px;
+            font-size: 1.1rem;
+            border-radius: 4px;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="logo">🐾 DuniaKucing</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#facts">Fakta Unik</a></li>
+                <li><a href="#interactive">Generator Fakta</a></li>
+                <li><a href="#gallery">Galeri</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Selamat Datang di Dunia Kucing!</h1>
+            <p>Temukan hal-hal menarik dan menggemaskan seputar anabul favorit Anda.</p>
+            <a href="#facts" class="btn">Jelajahi Sekarang</a>
+        </div>
+    </section>
+
+    <!-- Fakta Unik Section -->
+    <section id="facts" class="section">
+        <h2>Fakta Unik Kucing</h2>
+        <div class="cards-container">
+            <div class="card">
+                <h3>😴 Waktu Tidur Panjang</h3>
+                <p>Kucing menghabiskan sekitar 70% dari hidup mereka untuk tidur. Ini berarti rata-rata kucing tidur 13-16 jam sehari!</p>
+            </div>
+            <div class="card">
+                <h3>👂 Pendengaran Tajam</h3>
+                <p>Kucing memiliki 32 otot di setiap telinganya, memungkinkan mereka memutar telinga hingga 180 derajat.</p>
+            </div>
+            <div class="card">
+                <h3>🐾 Sidik Hidung Unik</h3>
+                <p>Sama seperti sidik jari pada manusia, pola pada hidung kucing itu unik dan tidak ada dua kucing yang memiliki pola hidung yang sama.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive JS Section -->
+    <section id="interactive" class="section bg-light">
+        <h2>Tahukah Kamu?</h2>
+        <p>Klik tombol di bawah untuk menampilkan fakta seru tentang kucing secara acak!</p>
+        <div class="fact-box">
+            <p id="fact-display">Klik tombol untuk memulai!</p>
+        </div>
+        <button id="fact-btn" class="btn">Dapatkan Fakta Acak</button>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section">
+        <h2>Galeri Kucing Lucu</h2>
+        <div class="gallery-grid">
+            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=500" alt="Kucing Lucu 1">
+            <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=500" alt="Kucing Lucu 2">
+            <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=500" alt="Kucing Lucu 3">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 DuniaKucing. Dibuat dengan ❤️ untuk para pencinta kucing.</p>
+    </footer>
+
+    <!-- SCRIPT (JavaScript) -->
+    <script>
+        // Daftar fakta menarik tentang kucing
+        const catFacts = [
+            "Kucing bisa melompat hingga 6 kali tinggi badan mereka sendiri!",
+            "Dengkuran kucing (purring) bisa membantu menyembuhkan tulang dan otot mereka sendiri.",
+            "Kucing tidak bisa merasakan rasa manis.",
+            "Kucing memiliki lebih dari 100 suara vokal yang berbeda, sedangkan anjing hanya sekitar 10.",
+            "Kunci kebahagiaan kucing adalah ketika kumisnya bergerak santai dan matanya berkedip perlahan ke arahmu.",
+            "Kucing tertua di dunia yang pernah dicatat hidup hingga usia 38 tahun!"
+        ];
+
+        // Mengambil elemen HTML
+        const factDisplay = document.getElementById('fact-display');
+        const factBtn = document.getElementById('fact-btn');
+
+        // Fungsi untuk menampilkan fakta acak
+        function getRandomFact() {
+            const randomIndex = Math.floor(Math.random() * catFacts.length);
+            factDisplay.textContent = catFacts[randomIndex];
+        }
+
+        // Menambahkan event listener pada tombol
+        factBtn.addEventListener('click', getRandomFact);
+    </script>
+</body>
+</html>
